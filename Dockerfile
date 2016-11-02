@@ -29,10 +29,10 @@ RUN echo "[global]\\ntarget=/usr/lib/python2.7/dist-packages" > /etc/pip.conf &&
 
 # jupyterのextensionsのインストール
 ENV JUPYTER_DATA_DIR /home/developer/.local/share/jupyter
-ENV JUPYTER_CONFIG_DIR /home/developer/.jupyter 
+ENV JUPYTER_CONFIG_DIR /home/developer/.jupyter
 RUN pip --no-cache-dir install pyyaml && \
     pip --no-cache-dir install psutil && \
-    pip --no-cache-dir install jupyter_nbextensions_configurator 
+    pip --no-cache-dir install jupyter_nbextensions_configurator
 RUN git clone https://github.com/ipython-contrib/jupyter_contrib_nbextensions.git jupyter_contrib_nbextensions && \
     cd jupyter_contrib_nbextensions && \
     python setup.py install && \
@@ -63,16 +63,16 @@ RUN rm /bin/sh && \
     ln -s /bin/bash /bin/sh
 
 # matplotlibのbackendをQt4aggに変更
-RUN sed -ri 's/^backend.*$/backend      : Qt4agg/g' /usr/local/lib/python2.7/dist-packages/matplotlib/mpl-data/matplotlibrc 
+RUN sed -ri 's/^backend.*$/backend      : Qt4agg/g' /usr/local/lib/python2.7/dist-packages/matplotlib/mpl-data/matplotlibrc
 ENV QT_X11_NO_MITSHM 1
 
 
 RUN chown -R developer:developer /home/developer/.local/share/jupyter
-RUN chown -R developer:developer /home/developer/.jupyter 
+RUN chown -R developer:developer /home/developer/.jupyter
 
 USER developer
 RUN mkdir /home/developer/notebooks
-COPY package_list_simple.md /home/developer/notebooks/package_list.md
+COPY package_list.md /home/developer/notebooks/package_list.md
 WORKDIR /home/developer/notebooks
 
 CMD ["/home/developer/run_jupyter.sh"]

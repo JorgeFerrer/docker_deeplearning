@@ -1,0 +1,10 @@
+# インストール済みのpythonパッケージ
++ tensorflow
++ TFLearn
++ chainer
++ scikit-learn
++ numpy
++ scipy
++ matplotlib
++ pandas
++ cython
