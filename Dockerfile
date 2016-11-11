@@ -78,4 +78,6 @@ COPY full_dataset.pkl /home/developer/notebooks/full_dataset.pkl
 COPY train-birds.ipynb /home/developer/notebooks/train-birds.ipynb
 WORKDIR /home/developer/notebooks
 
+RUN chown -R developer:developer /home/developer/notebooks
+
 CMD ["/home/developer/run_jupyter.sh"]
