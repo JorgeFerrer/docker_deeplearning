@@ -75,6 +75,7 @@ USER developer
 RUN mkdir /home/developer/notebooks
 COPY package_list.md /home/developer/notebooks/package_list.md
 COPY full_dataset.pkl /home/developer/notebooks/full_dataset.pkl
+COPY train-birds.ipynb /home/developer/notebooks/train-birds.ipynb
 WORKDIR /home/developer/notebooks
 
 CMD ["/home/developer/run_jupyter.sh"]
