@@ -3,6 +3,7 @@ FROM tensorflow/tensorflow:0.11.0
 # FROM tensorflow/tensorflow:nightly-gpu
 
 MAINTAINER Hayato Sasaki <h.developer.ynu@gmail.com>
+MAINTAINER Manuel de la Peña <manuel.delapenya@liferay.com>
 
 # set locale
 RUN locale-gen en_US.UTF-8
