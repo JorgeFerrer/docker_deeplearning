@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:nightly
+FROM tensorflow/tensorflow:0.11.0
 # GPUを利用師な場合は１行目をコメントアウトして代わりに下の行を有効にする
 # FROM tensorflow/tensorflow:nightly-gpu
 
