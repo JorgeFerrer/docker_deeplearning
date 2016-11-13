@@ -74,8 +74,9 @@ RUN chown -R developer:developer /home/developer/.jupyter
 USER developer
 RUN mkdir /home/developer/notebooks
 COPY package_list.md /home/developer/notebooks/package_list.md
-COPY full_dataset.pkl /home/developer/notebooks/full_dataset.pkl
-COPY train-birds.ipynb /home/developer/notebooks/train-birds.ipynb
+#COPY full_dataset.pkl.zip /home/developer/notebooks/full_dataset.pkl.zip
+#COPY train-birds.ipynb /home/developer/notebooks/train-birds.ipynb
+COPY cifar-10.ipynb /home/developer/notebooks/cifar-10.ipynb
 WORKDIR /home/developer/notebooks
 
 RUN chown -R developer:developer /home/developer/notebooks
