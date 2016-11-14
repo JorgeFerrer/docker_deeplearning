@@ -79,6 +79,6 @@ COPY package_list.md /home/developer/notebooks/package_list.md
 COPY cifar-10.ipynb /home/developer/notebooks/cifar-10.ipynb
 WORKDIR /home/developer/notebooks
 
-RUN chown -R developer:developer /home/developer/notebooks
-
 CMD ["/home/developer/run_jupyter.sh"]
+
+RUN sudo chown -R developer:developer /home/developer/notebooks
